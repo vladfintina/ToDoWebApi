@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "Title": "finish homework",
+    "IsDone": false,
+    "DueDate": "2026-12-09T08:11:06.181Z"
+  },
+  {
+    "Id": 2,
+    "Title": "read",
+    "IsDone": true,
+    "DueDate": "2025-10-20T00:00:00"
+  },
+  {
+    "Id": 3,
+    "Title": "swim",
+    "IsDone": false,
+    "DueDate": "2023-10-20T00:00:00"
+  },
+  {
+    "Id": 4,
+    "Title": "jump",
+    "IsDone": true,
+    "DueDate": null
+  },
+  {
+    "Id": 5,
+    "Title": "finish presentation",
+    "IsDone": false,
+    "DueDate": "2026-11-10T08:08:03.26Z"
+  }
+]
