@@ -3,7 +3,6 @@ namespace ToDoWebApi;
 // One task in the to-do list.
 public class TodoItem
 {
-    // I as a server handle
     public int Id { get; set; }
     public string Title { get; set; }
     public bool IsDone { get; set; }
@@ -41,7 +40,6 @@ public class TodoItem
 public class TodoItemDTO
 {   
     public string Title { get; set; }
-    public bool IsDone { get; set; }
     public DateTime? DueDate { get; set; }
 
     // The user who creates the task, and the password of that user.

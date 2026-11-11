@@ -49,6 +49,7 @@ public static class Database
                     DueDate TEXT NULL,
                     UserId INTEGER NOT NULL REFERENCES Users(Id)
                 );";
+                
             command.ExecuteNonQuery();
         }
 

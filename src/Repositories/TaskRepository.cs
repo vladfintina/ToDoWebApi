@@ -93,7 +93,9 @@ public static class TaskRepository
             command.Parameters.AddWithValue("$userId", task.UserId);
 
             // ExecuteScalar returns the first value of the result: the new Id.
-            return Convert.ToInt32(command.ExecuteScalar());
+            int taskId = Convert.ToInt32(command.ExecuteScalar());
+            
+            return taskId;
         }
     }
 
@@ -124,7 +126,7 @@ public static class TaskRepository
             command.CommandText = "DELETE FROM Todos WHERE Id = $id;";
             command.Parameters.AddWithValue("$id", id);
             command.ExecuteNonQuery();
-        }
+        } // the connection ends - using handles closing the conn
     }
 
     // Turns one database row into a TodoItem.
@@ -135,7 +137,7 @@ public static class TaskRepository
         task.Id = reader.GetInt32(0);
 
         // SQLite has no true/false type. It stores 1 for done and 0 for not done.
-        task.IsDone = reader.GetInt32(2) == 1;
+        task.IsDone = reader.GetInt32(2) == 1; // 1 == 1 => true or 0 == 1 => false
 
         // The due date is saved as text, or NULL if the task has no due date.
         if (!reader.IsDBNull(3))
